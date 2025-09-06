@@ -15,8 +15,9 @@ Los objetivos de esta práctica son:
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva)
 que se tendrán en cuenta a la hora de evaluar esta práctica:
 * Se valorará positivamente que el alumnado haya realizado de forma efectiva las tareas propuestas con anterioridad a la sesión de prácticas
+
 Con anterioridad a la sesión de prácticas, debe Ud. estudiar los documentos que se enlazan desde
-éste así como realizar todas las tareas posibles de las que en este documento se proponen.
+éste, así como realizar todas las tareas posibles de las que en este documento se proponen.
 
 ### Tareas previas
 #### GNU/Linux en su ordenador de trabajo
@@ -25,17 +26,15 @@ trabajando fundamentalmente en una [máquina virtual](https://es.wikipedia.org/w
 [IaaS](https://es.wikipedia.org/wiki/Infraestructura_como_servicio_(IaaS)) de la ULL.
 Es por ello que resulta muy conveniente que el alumnado tenga instalado Linux en un ordenador personal con el que
 trabaje desde su casa. 
+
 Se optará preferentemente por la distribución Ubuntu para que sea la misma que tiene la máquina virtual de la asignatura.  
 Hay al menos tres opciones para ello, que son las siguientes en orden de mayor a menor idoneidad para el trabajo en la asignatura:
 
-  * Si dispone Ud. de un ordenador propio, de uso exclusivo, que pueda formatear (borrando por tanto toda la información)
-  instale directamente Ubuntu en él siguiendo (por ejemplo) 
-  [estas instrucciones](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview). 
-  Para esta instalación necesitará Ud. crear un pendrive desde el que pueda arrancar el ordenador. 
-  Siga para ello (por ejemplo) 
+  * Si dispone Ud. de un ordenador propio, puede instalar Ubuntu directamente en él, bien [reemplazando el sistema operativo actual](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview) (y por tanto eliminando todos los datos del equipo), bien [creando una partición para conservarlo](youtube.com/watch?v=5Yre3OnMUws). 
+  Para esta instalación necesitará Ud. crear un pendrive desde el que pueda arrancar el ordenador, siguiendo para ello (por ejemplo) 
   [estas otras instrucciones](https://ubuntu.com/tutorials/create-a-usb-stick-on-windows#1-overview).
 
-  * Instalar Ubuntu como un sistema "invitado" dentro de Windows usando para ello un
+  * Instalar Ubuntu como un sistema "invitado" dentro de Windows, usando para ello un
   software de virtualización como VirtualBox. 
   La página [Install Ubuntu on Oracle VirtualBox](https://brb.nci.nih.gov/seqtools/installUbuntu.html)
   contiene las instrucciones a seguir para instalar Ubuntu como sistema invitado en Windows.
@@ -47,8 +46,8 @@ Las tres opciones anteriores están ordenadas atendiendo a la que consideramos i
 Tenga esto en cuenta a la hora de decidirse por cualquiera de estas opciones.
 
 Una opción alternativa que se considera menos adecuada consiste en no instalar un sistema Linux sino acceder 
-a la máquina virtual IaaS de la asignatura desde Windows usando para ello un cliente ssh. 
-Se recomienda para este caso instalar en Windows [el cliente ssh PuTTY](https://www.putty.org/) que puede Ud. descargar libremente.  
+a la máquina virtual IaaS de la asignatura desde Windows usando para ello un cliente *ssh*. 
+Se recomienda para este caso utilizar el que viene instalado con Windows 10 y posteriores, a través de la aplicación *Símbolo del Sistema*, o a través del [cliente ssh PuTTY](https://www.putty.org/) que puede Ud. descargar libremente.  
 [Este vídeo](https://www.youtube.com/watch?v=_-rS8QM0JaI) muestra cómo configurar la VPN en Windows y cómo usar Putty para acceder a una máquina virtual.
 
 En todo caso recuerde que si desea acceder a las máquinas de la Universidad desde fuera del campus
@@ -76,8 +75,7 @@ Podrá utilizar indistintamente las direcciones `aluXXXX@ull.edu.es` y el alias 
 
 #### GitHub
 3. [GitHub](https://github.com/) es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git.
-Cree una cuenta en [GitHub](https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home). 
-Configure el perfil de esa cuenta de modo que incluya una imagen (fotografía) en la que se le reconozca y haga que la cuenta de e-mail asociada sea la dirección institucional o su alias.
+Cree una cuenta en [GitHub](https://github.com/) y configure su perfil de esa cuenta de modo que incluya una imagen (fotografía) en la que se le reconozca y haga que la cuenta de e-mail asociada sea la dirección institucional o su alias.
 Para la configuración de esa cuenta se le recomienda usar su nombre real, puesto que sus repositorios de código en GitHub
 pasarán a formar parte de su curriculum profesional.
 
@@ -125,51 +123,55 @@ y máquina local al PC en el que está Ud. trabajando.
 
 8. Acceda a la [interfaz web](https://iaas.ull.es/ovirt-engine/sso/login.html) 
 de la plataforma IaaS-ULL (recuerde tener iniciada una conexión VPN si trabaja desde fuera del campus universitario) y autentifíquese en esa interfaz con sus credenciales (username + password) de la cuenta institucional. 
-[Esta imagen](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/1-Ovirt-login.png)
-muestra la pantalla de acceso a la interfaz.  
+
+![login](ovirt-login.png)
+
 Tenga en cuenta que la 
 [interfaz web de las máquinas IaaS](https://iaas.ull.es)
 no soporta muchas conexiones concurrentes de modo que es conveniente que se conecte Ud. cuanto antes para no
 coincidir con otros estudiantes en esa conexión.
-Vea el estado de la máquina y arránquela para comenzar a trabajar con ella.
-[Esta imagen](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/2-OvirtVMs.png)
-muestra las máquinas virtuales disponibles. 
-Inicialmente la máquina de la asignatura aparece con estado "Apagado" y se arranca mediante el botón "Ejecutar".  
-El proceso de arranque de la máquina puede durar unos minutos.
-Una vez que la máquina haya arrancado, tome nota de la Dirección IP de la máquina, que se muestra en el apartado "Detalles" de la máquina.
-[Esta imagen](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/5-ovirt-Direcci%C3%B3nIP.png)
-muestra la pantalla de información correspondiente a una máquina virtual y en ella se muestra la dirección IP de la máquina.   
-La [dirección IP](https://en.wikipedia.org/wiki/IP_address) es una secuencia de números (de la forma `10.6.131.106`) que identifican de forma unívoca a cualquier dispositivo conectado a Internet.
+
+A continuación encontrará un listado con todas las máquinas virtuales que tiene disponibles, entre las que debería aparecer la de esta asignatura. Si es la primera vez que accede, pulse "Tomar una máquina virtual" y, en unos minutos, su máquina estará lista para usarse. La siguiente vez que acceda, la máquina estará ya accesible. Si la máquina está apagada, pulse el botón "Ejecutar". El proceso de arranque de la máquina puede durar unos minutos.
+
+![solicitar](ovirt-vm.png)
+
+Una vez que la máquina haya arrancado, haga click sobre su imagen para acceder a su información. Tome nota de la Dirección IP de la máquina, que se muestra en el apartado "Detalles" de la máquina. La [dirección IP](https://en.wikipedia.org/wiki/IP_address) es una secuencia de números (de la forma `10.6.131.106`) que identifican de forma unívoca a cualquier dispositivo conectado a Internet.
+
+![ip](ovirt-ip.png)
+
 Esta dirección será necesaria para establecer conexiones directas a la máquina a través de ssh desde su casa o desde las salas del Centro de Cálculo de la ESIT. 
 Anote esa dirección IP puesto que la máquina conserva esa dirección IP de forma estable. 
 Si en algún momento **experimenta dificultades de conexión**, conecte a través de la interfaz web y compruebe que
 la dirección de la máquina no ha cambiado.
 
+Observe que en la página en la que se encuentra también hay un botón de "Reiniciar" (que usaremos más adelante) y uno de "Apagar". **Nunca pulse el botón de Apagar ni ejecute la orden `halt` desde su máquina virtual,** ya que las máquinas virtuales de este servicio no tienen estado interno y apagarlas de esta manera eliminaría permanentemente todo su contenido, incluyendo su sistema operativo.
+
 9. Abra una conexión ssh con su máquina usando la dirección IP que ha obtenido en el paso anterior.
-Si esa conexión la realiza desde Linux el comando que ha de usar para establecerla es
+Si esa conexión la realiza desde Linux el comando que ha de usar para establecerla es el siguiente, cambiando la dirección IP por la de su máquina:
 ```
 $ ssh usuario@10.6.131.106
 ```
-Cambiando en el comando anterior, la dirección IP por la de su máquina.
 En cuanto se conecte a la máquina remota, el sistema le pedirá sus credenciales.
 Recuerde que inicialmente esas credenciales de acceso son: Username: `usuario` y password: `usuario`.
 
-**Preste mucha atención a este paso** porque si comete un error, puede ser irreparable y su máquina resultará inaccesible.
+La primera vez que se conecte puede que se le muestre un mensaje similar al siguiente, para preguntarle si confía Ud. en esta IP.
+```
+The authenticity of host '10.6.128.999 (10.6.128.999)' can't be established.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+Responda `yes` para continuar con la conexión.
+
 En este primer acceso el sistema le solicitará que introduzca la contraseña actual y que escriba dos veces la nueva contraseña elegida.
+**Preste mucha atención a este paso** porque si comete un error, puede ser irreparable y su máquina resultará inaccesible.
 No se preocupe por ahora por la contraseña que elija puesto que siempre la puede cambiar en el futuro 
 pero **anote** el password que elija para no perderlo u olvidarlo.
 La recomendación es que elija ahora un password simple (algo como `minombresintildes` o similar).
 Ya en el futuro podrá cambiarlo por otro más robusto.
+
 Compruebe a continuación el sistema operativo y versión del mismo:
 ```
 $ lsb_release -a
 ```
-Para consultar la IP de una máquina en un terminal Linux utilice el comando:
-```
-$ ifconfig -a
-```
-Pruebe ese comando, aunque en este punto no es necesario puesto que la dirección IP ya la ha obtenido Ud. en
-la interfaz web del IaaS.
 
 10. Actualice el software (paquetes) de la máquina siguiendo las indicaciones de [esta página](https://linuxconfig.org/how-to-update-ubuntu-packages-on-18-04-bionic-beaver-linux) (por ejemplo).
 Los comandos que tendrá que utilizar son:
@@ -179,19 +181,21 @@ $ sudo apt upgrade
 $ sudo apt autoremove
 ```
 [Esta imagen](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/update.png)
-muestra el resultado de ejecución del primero de estos comandos y 
+muestra un posible resultado de la ejecución del primero de estos comandos y 
 [esta otra](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/upgrade2.png)
 del segundo de ellos.    
-Cuando el sistema le pregunte si hacerlo, indique No instalar `grub`.
-Véase 
-[esta imagen](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/grub.png)
-y 
-[esta otra](https://raw.githubusercontent.com/fsande/IB-P01-EntornoIaaS/3b0223eef4fff02835108ac59ea8d2f2f26c43cc/img/grub2.png) 
-que ilustran esas opciones.
+Si el sistema le pregunta si desea instalar `grub`, responda que no.
+
 Los comandos que se ejecutan con `sudo` se están ejecutando como "superusuario" de modo que **nunca** ejecute comandos con `sudo` salvo 
 que sepa muy bien lo que está haciendo o se le indique (como en este caso) cómo usarlo.
 
-11. Edite los ficheros necesarios para [cambiar el nombre lógico de la máquina](https://askubuntu.com/questions/9540/how-do-i-change-the-computer-name) que le ha sido asignada. 
+11. Para consultar la IP de una máquina en un terminal Linux utilice el comando:
+```
+$ ifconfig -a
+```
+Si recibe el mensaje de que `ifconfig` no está instalado, se le indicará qué comando ejecutar para instalarlo. Ejecútelo y pruebe el comando de nuevo. Observe que la IP mostrada es la misma que se le indicó en la interfaz web del IaaS.
+
+12. Edite los ficheros necesarios para [cambiar el nombre lógico de la máquina](https://askubuntu.com/questions/9540/how-do-i-change-the-computer-name) que le ha sido asignada. 
 Se propone utilizar como nombre algo como Ubuntu-18-ASIG-XXX (cambiando "ASIG" por el acrónimo de la asignatura y 
 "XXX" por lo que Ud. quiera), aunque puede Ud. usar para su máquina el nombre que prefiera.
 Para realizar ese cambio ha de editar Ud. los siguientes ficheros (necesita usar `sudo` para tener permisos de
@@ -207,7 +211,7 @@ $ sudo reboot
 ```
 
 #### git y GitHub
-12. Instale `git` en su máquina:
+13. Instale `git` en su máquina:
 ```
 $ sudo apt install git
 ```
@@ -229,35 +233,37 @@ Hay mucha más documentación sobre Git en línea:
 * [Online Simulator/Tutorial](https://learngitbranching.js.org/?locale=es_ES)
 Con posterioridad a esta práctica, revise esta documentación.
 
-13. Consiga que se pueda subir código desde su máquina virtual hacia su cuenta GitHub sin necesidad de autentificación. 
+14. Consiga que se pueda subir código desde su máquina virtual hacia su cuenta GitHub sin necesidad de autentificación. 
 Consulte para ello las instrucciones
 [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
-15. Cree un directorio `practicas` y  clone en él un repositorio git:
+15. Cree un directorio `practicas` y clone en él un repositorio git:
 ```
 cd
 mkdir practicas
 cd practicas
-git clone git@github.com:IB-2024-2025/P01-IaaS.git 2024-2025-IB-P01-EntornoIaaS
+git clone git@github.com:IB-2025-2026/P01-IaaS.git 2025-2026-IB-P01-EntornoIaaS
 ```
 
 #### Edición y compilación
-15. Acceda a la máquina virtual usando ssh y cree un directorio `~/practicas`.
-Colóquese en ese directorio y utilice el editor ``vi`` para escribir el código fuente del programa 
+15. Colóquese en el directorio `practicas` y utilice el editor `vi` para escribir el código fuente del programa 
 [hello_world.cc](https://github.com/fsande/IB-class-code-examples/blob/master/IntroductionToC%2B%2B/hello_world.cc).
 A continuación, compile y ejecute ese programa.
-Para compilar el programa escriba el siguiente comando 
+Para compilar el programa escriba el siguiente comando (que estudiaremos más adelante en la asignatura)
 
 `$ g++ -std=c++14 -g -Wall -o hello_world hello_world.cc`
 
-Utilice los comandos linux que conozca para ver los ficheros del directorio `~/practicas` en el que está
+Si `g++` no está instalado, instálelo siguiendo las instrucciones que se le mostrarán al intentar ejecutarlo. Utilice los comandos linux que conozca para ver los ficheros del directorio `~/practicas` en el que está
 trabajando.
 
-Para ejecutarlo el programa escriba:
+Para ejecutar el programa escriba:
 
 `$ ./hello_world`
 
 #### Simplificar la conexión a la VM
+
+Los siguientes dos pasos son opcionales y deben ejecutarse en el equipo *desde el cual* se va a conectar a su máquina virtual, si éste tiene un sistema operativo Linux y tiene Ud. permisos de administrador
+
 16. Siga [estas instrucciones](http://www.linuxproblem.org/art_9.html) 
 para establecer la configuración de la máquina de modo que se pueda conectar a ella sin necesidad de escribir el password en cada conexión. 
 Para poder conectarse por ssh con las máquinas virtuales de IaaS ull ha de autentificarse en la página [acceso.ull.es](acceso.ull.es).  
