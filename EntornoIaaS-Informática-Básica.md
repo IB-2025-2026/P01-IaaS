@@ -236,6 +236,17 @@ Con posterioridad a esta práctica, revise esta documentación.
 14. Consiga que se pueda subir código desde su máquina virtual hacia su cuenta GitHub sin necesidad de autentificación. 
 Consulte para ello las instrucciones
 [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+En su máquina virtual ejecute los siguientes comandos para generar e instalar una clave SSH (donde `alu...edu.es` es la cuenta que haya utilizado para registrarse en GitHub):
+```
+$ ssh-keygen -t ed25519 -C "alu...edu.es"
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_ed25519
+$ cat ~/.ssh/id_ed25519.pub
+```
+  - El primer comando le preguntará dónde generar la clave y si desea darle una contraseña. En ambos casos puede pulsar *Enter* sin escribir ningún valor para mantener los valores por defecto.
+  - El cuarto comando mostrará todo el contenido de la clave generada. Selecciónelo y cópielo.
+  - En su cuenta de GitHub, haga clic en el icono con su foto en la esquina superior derecha y luego en *Settings.* En la columna izquierda, haga clic *SSH and GPG keys* del apartado *Access" y luego en el botón *New SSH key.*
+  - Dé a su nueva clave el nombre que prefiera (por ejemplos, "Informática Básica 2025/2026") y pegue el contenido de la clave generada. Pulse en "Add SSH Key" y su cuenta GitHub quedará enlazada con su máquina virtual.
 
 15. Cree un directorio `practicas` y clone en él un repositorio git:
 ```
@@ -246,7 +257,7 @@ git clone git@github.com:IB-2025-2026/P01-IaaS.git 2025-2026-IB-P01-EntornoIaaS
 ```
 
 #### Edición y compilación
-15. Colóquese en el directorio `practicas` y utilice el editor `vi` para escribir el código fuente del programa 
+16. Colóquese en el directorio `practicas` (`cd ~/practicas`) y utilice el editor `vi` para escribir el código fuente del programa 
 [hello_world.cc](https://github.com/fsande/IB-class-code-examples/blob/master/IntroductionToC%2B%2B/hello_world.cc).
 A continuación, compile y ejecute ese programa.
 Para compilar el programa escriba el siguiente comando (que estudiaremos más adelante en la asignatura)
@@ -264,14 +275,14 @@ Para ejecutar el programa escriba:
 
 Los siguientes dos pasos son opcionales y deben ejecutarse en el equipo *desde el cual* se va a conectar a su máquina virtual, si éste tiene un sistema operativo Linux y tiene Ud. permisos de administrador
 
-16. Siga [estas instrucciones](http://www.linuxproblem.org/art_9.html) 
+17. Siga [estas instrucciones](http://www.linuxproblem.org/art_9.html) 
 para establecer la configuración de la máquina de modo que se pueda conectar a ella sin necesidad de escribir el password en cada conexión. 
 Para poder conectarse por ssh con las máquinas virtuales de IaaS ull ha de autentificarse en la página [acceso.ull.es](acceso.ull.es).  
 Recuerde que en caso de acceder desde fuera de del campus ULL ha de hacerlo mediante una conexión VPN. 
 Consulte [esta referencia](https://www.ull.es/servicios/stic/2016/05/10/servicio-de-vpn-de-la-ull/) 
 (en el Centro de Cálculo, por ahora no lo necesita) para conectarse a través de vpn.
 
-17. También resulta conveniente utilizar alguno de los métodos (ssh config o alias) que se presentan en 
+18. También resulta conveniente utilizar alguno de los métodos (ssh config o alias) que se presentan en 
 [estas instrucciones](https://www.digitalocean.com/community/tutorials/how-to-create-an-ssh-shortcut)
 de modo que se simplifique la conexión con la máquina remota pudiendo escribir algo como:
 ```
