@@ -122,7 +122,7 @@ En este documento se denominará máquina remota a la máquina virtual (VM) del 
 y máquina local al PC en el que está Ud. trabajando.
 
 8. Acceda a la [interfaz web](https://iaas.ull.es/ovirt-engine/sso/login.html) 
-de la plataforma IaaS-ULL (recuerde tener iniciada una conexión VPN si trabaja desde fuera del campus universitario) y autentifíquese en esa interfaz con sus credenciales (username + password) de la cuenta institucional. 
+de la plataforma IaaS-ULL (recuerde tener iniciada una conexión VPN si trabaja desde fuera del campus universitario) y autentifíquese en esa interfaz con sus credenciales (username + password) de la cuenta institucional. Si no tiene acceso a la plataforma, identifíquese primero en el [sistema de autenticación de la ULL](https://valida.ull.es/) y vuelva a intentarlo. 
 
 ![login](ovirt-login.png)
 
